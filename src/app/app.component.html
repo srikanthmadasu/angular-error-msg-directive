@@ -1,0 +1,27 @@
+<div style="text-align:center">
+  <h1>Welcome to {{ title }}!</h1>
+</div>
+<div [formGroup]="userForm">
+  <div class="form-group col-md-4" formGroupName="name">
+    <label>Firstname*</label>
+    <input type="text" class="form-control" formControlName="firstname" 
+      appFormControlValidationMsg validationMsgId="firstname">
+  </div>
+  <div class="form-group col-md-4" formGroupName="name">
+    <label>MI</label>
+    <input type="text" class="form-control" formControlName="mi">
+  </div>
+  <div class="form-group col-md-4" formGroupName="name">
+    <label>Lastname*</label>
+    <input type="text" class="form-control" formControlName="lastname" 
+      appFormControlValidationMsg validationMsgId="lastname">
+  </div>
+  <div class="form-group col-md-4">
+    <label>Email*</label>
+    <input type="text" class="form-control" formControlName="email" 
+      appFormControlValidationMsg validationMsgId="email">
+  </div>
+</div>
+<br/>
+<button type="submit" (click)="onSubmit()" 
+  appFormSubmitValidationMsg [validationControl]="userForm">Submit</button>
